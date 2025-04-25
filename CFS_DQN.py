@@ -571,7 +571,12 @@ for e in range(number_of_experiment):
                 # Uncommented lines to append data to DataFrame and save to Excel sheet
                 print('policy train accuracy: {} '.format(policy_accuracy_train))
                 print('policy test accuracy: {} '.format(policy_accuracy_test))
-                df=df.append({'episode':str(epi+1), 'policy_columns':str(policy_columns),'policy_accuracy_train':policy_accuracy_train,'policy_accuracy_test':policy_accuracy_test}, ignore_index=True)
+                df.loc[len(df)] = {
+                    'episode': str(epi + 1),
+                    'policy_columns': str(policy_columns),
+                    'policy_accuracy_train': policy_accuracy_train,
+                    'policy_accuracy_test': policy_accuracy_test,
+                }
 
         df.to_excel(writer, 'Experiment' + str(e))
         # df_plot=df[['episode','policy_accuracy_train','policy_accuracy_test']]
