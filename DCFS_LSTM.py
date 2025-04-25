@@ -370,7 +370,7 @@ for e in range(number_of_experiment):
 
 # Save results after the loop
 df.to_excel(writer, sheet_name='Results', index=False)
-writer.save()
+writer.close()
 print(f"Results saved to {excel_file_path}")
 
 # Save pickles and experiment dict
