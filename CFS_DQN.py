@@ -640,6 +640,6 @@ for e in range(number_of_experiment):
 # with open('Experiments/'+ str(experiment) + '/experiment_dict.pickle', 'wb') as handle:
 #    pickle.dump(experiment_dict, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-writer.save()
+writer.close()
 stop = timeit.default_timer()
 print(stop - start)
